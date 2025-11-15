@@ -1,0 +1,16 @@
+# Invoice Extraction and Normalization Pipeline
+# Python dependencies
+
+# Excel file creation and manipulation
+openpyxl>=3.1.0
+
+# CSV handling (built-in, but listing for completeness)
+# csv - standard library
+
+# Optional: fuzzy string matching for product matching
+# Uncomment if you want to use fuzzy matching libraries
+# fuzzywuzzy>=0.18.0
+# python-Levenshtein>=0.21.0
+
+# Optional: pandas for advanced data manipulation
+# pandas>=2.0.0

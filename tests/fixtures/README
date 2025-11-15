@@ -1,0 +1,58 @@
+Test Fixtures Directory
+=======================
+
+This directory contains sample vendor invoice files for testing the 
+invoice extraction and normalization pipeline.
+
+File Naming Convention
+----------------------
+Name invoice files using the pattern:
+    {vendorname}_invoice_{number}.csv
+
+Examples:
+    - sysco_invoice_001.csv
+    - usfoods_invoice_001.csv
+    - examplevendor_invoice_001.csv
+
+Invoice File Format
+-------------------
+Each invoice should be a CSV file with at minimum these columns:
+    - Item (or Product): Product name/description
+    - Qty (or Quantity): Quantity ordered
+    - Unit Price (or Price): Price per unit
+
+Optional columns:
+    - Unit (or UOM): Unit of measure (lb, kg, ea, etc.)
+    - Total: Total line item price
+
+Example CSV content:
+--------------------
+Item,Qty,Unit Price
+Chicken Thighs,10,2.50
+Ground Beef,5 lbs,4.99
+Olive Oil,2,8.99
+
+Adding Test Fixtures
+--------------------
+1. Obtain a sample invoice from a vendor (or create a test CSV)
+2. Convert to CSV format if necessary
+3. Ensure it has the required columns (Item, Qty, Unit Price)
+4. Name it following the convention above
+5. Place it in this directory
+
+Running Tests
+-------------
+To test the pipeline with your fixtures:
+
+    python scripts/extract_normalize.py \
+        --input-dir tests/fixtures \
+        --output-dir output \
+        --master-products master_products.csv
+
+The output Excel file will be created in the output/ directory.
+
+Notes
+-----
+- Keep invoice files small for testing purposes
+- Sanitize any sensitive vendor pricing data before committing
+- You can create subdirectories by vendor if you have many fixtures
