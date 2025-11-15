@@ -1,0 +1,8 @@
+Place sample vendor invoices in this directory for testing.
+
+Recommended structure examples:
+- tests/fixtures/examplevendor_invoice_001.csv
+- tests/fixtures/vendor2_invoice_2025-01-01.pdf
+- tests/fixtures/vendor3_12345.xlsx
+
+Start by adding one small CSV per vendor (headers like Item, Qty, Unit Price) to exercise the parser.
