@@ -55,6 +55,9 @@ def parse_quantity_unit(qs: str) -> Tuple[float, str]:
                 if per is not None:
                     unit = normalize_unit_name(parts[1])
                     return quantity * per, unit
+                except Exception:
+                    # If parsing fails, fall back to the generic unit handling below
+                    pass
     unit = normalize_unit_name(rest)
     return quantity, unit
 
