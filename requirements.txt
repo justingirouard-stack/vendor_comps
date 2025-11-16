@@ -9,7 +9,7 @@ Pillow>=9.0
 layoutparser>=0.3.4
 rapidfuzz>=2.0
 pytest>=7.0
-ruff==0.0.282
+ruff>=0.0.282
 pandera>=0.14
 python-dateutil
 pyyaml
