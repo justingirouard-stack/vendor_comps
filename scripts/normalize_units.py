@@ -50,6 +50,8 @@ def parse_quantity_unit(qs: str) -> Tuple[float, str]:
                     per = float(subnum.group(1).replace(",", ""))
                     unit = normalize_unit_name(parts[1])
                     return quantity * per, unit
+                except Exception:
+                    pass
     unit = normalize_unit_name(rest)
     return quantity, unit
 
