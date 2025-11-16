@@ -12,7 +12,7 @@ from pathlib import Path
 import logging
 import pandas as pd
 from rapidfuzz import process, fuzz
-from scripts.normalize_units import normalize_unit_quantity, parse_quantity_unit
+from normalize_units import normalize_unit_quantity, parse_quantity_unit
 from scripts.xlsx_writer import write_comparison_excel
 
 logging.basicConfig(level=logging.INFO)
