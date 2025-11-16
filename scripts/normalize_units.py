@@ -46,8 +46,13 @@ def parse_quantity_unit(qs: str) -> Tuple[float, str]:
         if len(parts) >= 2:
             subnum = re.search(r"([\d,.]+)", parts[1])
             if subnum:
+                # parse multiplicative form like "2 x 6 pack" -> quantity * per
+                per = None
                 try:
                     per = float(subnum.group(1).replace(",", ""))
+                except Exception:
+                    per = None
+                if per is not None:
                     unit = normalize_unit_name(parts[1])
                     return quantity * per, unit
     unit = normalize_unit_name(rest)

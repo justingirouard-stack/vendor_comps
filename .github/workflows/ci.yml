@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-run:
@@ -35,10 +36,10 @@ jobs:
       - name: Run extractor to produce comparison
         run: |
           mkdir -p output
-          python scripts/extract_normalize.py --input-dir tests/fixtures --output-dir output --master-products master_products.csv
+          python -m scripts.extract_normalize --input-dir tests/fixtures --output-dir output --master-products master_products.csv
 
       - name: Upload comparison artifact
         uses: actions/upload-artifact@v4
         with:
           name: vendor_price_comparison
-          path: output/vendor_price_comparison.xlsx
+          path: output/vendor_price_comparison.xlsxrison.xlsx
